@@ -1,51 +1,4 @@
-{{--<x-guest-layout>--}}
-{{--    <!-- Session Status -->--}}
-{{--    <x-auth-session-status class="mb-4" :status="session('status')" />--}}
-
-{{--    <form method="POST" action="{{ route('login') }}">--}}
-{{--        @csrf--}}
-
-{{--        <!-- Email Address -->--}}
-{{--        <div>--}}
-{{--            <x-input-label for="email" :value="__('Email')" />--}}
-{{--            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />--}}
-{{--            <x-input-error :messages="$errors->get('email')" class="mt-2" />--}}
-{{--        </div>--}}
-
-{{--        <!-- Password -->--}}
-{{--        <div class="mt-4">--}}
-{{--            <x-input-label for="password" :value="__('Password')" />--}}
-
-{{--            <x-text-input id="password" class="block mt-1 w-full"--}}
-{{--                            type="password"--}}
-{{--                            name="password"--}}
-{{--                            required autocomplete="current-password" />--}}
-
-{{--            <x-input-error :messages="$errors->get('password')" class="mt-2" />--}}
-{{--        </div>--}}
-
-{{--        <!-- Remember Me -->--}}
-{{--        <div class="block mt-4">--}}
-{{--            <label for="remember_me" class="inline-flex items-center">--}}
-{{--                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">--}}
-{{--                <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>--}}
-{{--            </label>--}}
-{{--        </div>--}}
-
-{{--        <div class="flex items-center justify-end mt-4">--}}
-{{--            @if (Route::has('password.request'))--}}
-{{--                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">--}}
-{{--                    {{ __('Forgot your password?') }}--}}
-{{--                </a>--}}
-{{--            @endif--}}
-
-{{--            <x-primary-button class="ml-3">--}}
-{{--                {{ __('Log in') }}--}}
-{{--            </x-primary-button>--}}
-{{--        </div>--}}
-{{--    </form>--}}
-{{--</x-guest-layout>--}}
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <!-- Mirrored from dreamschat.dreamguystech.com/template-html/template2/login-email.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Aug 2023 04:45:31 GMT -->
@@ -76,48 +29,32 @@
 
                 <div class="account-content">
                     <div class="login-header">
-                        <a href="index.html">
+                        <a href="#">
                             <img src="{{asset('assets/img/logo-full.png')}}" alt>
                         </a>
                     </div>
                     <div class="form-col">
                         <div class="login-text-details">
-                            <h3>Log in</h3>
-                            <p>Login with your Data that you entered during your Registration</p>
+                            <h3>Đăng nhập</h3>
                         </div>
-                        <form action="https://dreamschat.dreamguystech.com/template-html/template2/index.html">
+                        <form action="{{route('redirect')}}" method="get">
                             <div class="form-group">
-                                <label>Your Email</label>
-                                <input class="form-control form-control-lg group_formcontrol" name="email" type="email">
+                                <button class="btn newgroup_create btn-block d-block w-100" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                         viewBox="0 0 24 24"
+                                         style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;">
+                                        <path
+                                            d="M20.283 10.356h-8.327v3.451h4.792c-.446 2.193-2.313 3.453-4.792 3.453a5.27 5.27 0 0 1-5.279-5.28 5.27 5.27 0 0 1 5.279-5.279c1.259 0 2.397.447 3.29 1.178l2.6-2.599c-1.584-1.381-3.615-2.233-5.89-2.233a8.908 8.908 0 0 0-8.934 8.934 8.907 8.907 0 0 0 8.934 8.934c4.467 0 8.529-3.249 8.529-8.934 0-.528-.081-1.097-.202-1.625z"></path>
+                                    </svg>
+                                    Tiếp tục với Google
+                                </button>
                             </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input class="form-control form-control-lg group_formcontrol" name="password"
-                                       type="text">
-                            </div>
-                            <div class="form-group">
-                                <label class="custom-check d-flex">
-                                    <input type="checkbox">Keep me logged in
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="pt-1">
-                                <div class="text-center">
-                                    <button class="btn newgroup_create btn-block d-block w-100" type="submit">Login
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="text-center dont-have">Don’t have an account? <a
-                                    href="signup-email.html">Signup</a></div>
-                            <div class="text-center mt-3">
-<span class="forgot-link">
-<a href="forgotpassword-email.html" class="text-end">Forgot Password ?</a>
-</span>
-                            </div>
+                            <div class="text-center dont-have">Bạn chưa có tài khoản? <a
+                                    href="{{route('register')}}">Đăng ký</a></div>
                         </form>
                     </div>
                     <div class="back-btn-col text-center">
-                        <a href="index.html"><span><i class="fas fa-caret-left"></i></span> Back</a>
+                        <a href="#"><span><i class="fas fa-caret-left"></i></span> Back</a>
                     </div>
                 </div>
 
