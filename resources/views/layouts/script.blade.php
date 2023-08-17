@@ -10,3 +10,4 @@
 <script src="{{asset('assets/plugins/fancybox/jquery.fancybox.min.js')}}"></script>
 
 <script src="{{asset('assets/js/script.js')}}"></script>
+<script src="{{Vite::asset('resources/js/app.js') }}"></script>

@@ -44,4 +44,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function messages(){
+        return $this->hasMany(Message::class,'user_id','id');
+    }
+
+    public function groupMember(){
+        return $this->belongsTo(GroupMember::class,'user_id','id');
+    }
+
+    public function groups(){
+        return $this->hasMany(Group::class,'created_by','id');
+    }
 }
