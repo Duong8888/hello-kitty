@@ -18,7 +18,7 @@ class SocialiteController extends Controller
         return Socialite::driver('google')->redirect();
     }
     public function handleCallback(){
-        $data = $this->userSevice->login();
-        return response()->json($data);
+        $this->userSevice->login();
+        return redirect()->route('dashboard');
     }
 }

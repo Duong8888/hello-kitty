@@ -65,7 +65,10 @@
                         <a href="#" class="dropdown-item">Profile <span class="profile-icon-col"><i class="fas fa-id-card-alt"></i></span></a>
                         <a href="settings.html" class="dropdown-item">Settings <span class="material-icons">settings</span></a>
                         <a href="archived.html" class="dropdown-item">Archived <span class="material-icons">flag</span></a>
-                        <a href="login-email.html" class="dropdown-item">Logout <span class="material-icons">power_settings_new</span></a>
+                        <form action="{{route('logout')}}" method="post">
+                            @csrf
+                            <button class="dropdown-item">Logout<span class="material-icons">power_settings_new</span></button>
+                        </form>
                     </div>
                 </li>
             </ul>

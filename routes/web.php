@@ -24,8 +24,8 @@ Route::get('/detail',function (){
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('chat.detail');
+})->name('dashboard');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
