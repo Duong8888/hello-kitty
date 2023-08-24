@@ -8,6 +8,8 @@ $(document).ready(function () {
     let boxMessage = $('.messages');
     let headerChat = $('.chat-header');
     let user = $('.user-details');
+    let formChat = $('.chat-footer');
+    formChat.slideUp();
     headerChat.slideUp();
     boxMessage.html('');
 
@@ -73,6 +75,7 @@ $(document).ready(function () {
         $('.user-list-item').removeClass('active');
         idAction = clickedItem.getAttribute('data-id');
         headerChat.slideDown();
+        formChat.slideDown();
         loadMessage(actionLoadMessage, idAction);
         e.currentTarget.classList.add('active');
     })
