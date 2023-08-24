@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('message',1000);
             $table->unsignedBigInteger('group_id')->nullable();
+            $table->unsignedBigInteger('recipient_id')->nullable();
             $table->timestamps();
             $table->index('user_id');
         });

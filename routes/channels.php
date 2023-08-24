@@ -21,3 +21,10 @@ Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
 Broadcast::channel('chat',function (){
     return Auth::check();
 });
+Broadcast::channel('private-chat.{userId}', function ($user, $userId) {
+    return $user->id === (int)$userId;
+});
+
+Broadcast::channel('users-online', function ($user) {
+    return ['id' => $user->id, 'name' => $user->name,'avatar' => $user->avatar];
+});

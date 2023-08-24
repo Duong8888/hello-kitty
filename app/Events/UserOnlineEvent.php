@@ -10,19 +10,17 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class NewMessageEvent implements ShouldBroadcast
+class UserOnlineEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
      * Create a new event instance.
      */
-    public $message;
-    public $userId;
-    public function __construct($message,$userId)
+    public $user;
+    public function __construct($user)
     {
-        $this->message = $message;
-        $this->userId = $userId;
+        $this->user = $user;
     }
 
     /**
@@ -33,7 +31,7 @@ class NewMessageEvent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('private-chat.'.$this->userId),
+            new Channel('users-online'),
         ];
     }
 }

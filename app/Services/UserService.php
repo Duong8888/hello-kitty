@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Socialite\Facades\Socialite;
-use MongoDB\Driver\Session;
 
 class UserService
 {

@@ -2,12 +2,11 @@
 
 namespace App\Listeners;
 
-use App\Events\NewMessageEvent;
+use App\Events\UserOnlineEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Support\Facades\Log;
 
-class NewMessageListener
+class UserOnlineListener
 {
     /**
      * Create the event listener.
@@ -20,8 +19,8 @@ class NewMessageListener
     /**
      * Handle the event.
      */
-    public function handle(NewMessageEvent $event): void
+    public function handle(UserOnlineEvent $event)
     {
-
+        broadcast(new UserOnlineEvent($event->user))->toOthers();
     }
 }

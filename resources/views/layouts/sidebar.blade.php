@@ -58,7 +58,7 @@
                 </li>
                 <li>
                     <a href="#" class="chat-profile-icon" data-bs-toggle="dropdown">
-                        <img src="assets/img/avatar/avatar-13.jpg" alt="">
+                        <img src="{{session('avatar')}}" alt="">
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
                         <a href="#" class="dropdown-item dream_profile_menu">Edit Profile <span class="edit-profile-icon"><i class="fas fa-edit"></i></span></a>
@@ -67,7 +67,7 @@
                         <a href="archived.html" class="dropdown-item">Archived <span class="material-icons">flag</span></a>
                         <form action="{{route('logout')}}" method="post">
                             @csrf
-                            <button class="dropdown-item">Logout<span class="material-icons">power_settings_new</span></button>
+                                <button class="dropdown-item">Logout<span class="material-icons">power_settings_new</span></button>
                         </form>
                     </div>
                 </li>
