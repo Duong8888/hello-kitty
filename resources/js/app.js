@@ -10,14 +10,14 @@ Alpine.start();
 //     .listen('NewMessageEvent', function (data) {
 //         console.log(data);
 //     });
-console.log(infoUser.id)
-Echo.private('private-chat.'+infoUser.id)
-    .listen('NewMessageEvent', function (data) {
-        console.log(data);
-    })
-    .subscribed(function () {
-    console.log('Subscribed to private-chat.' + infoUser.id);
-});
+// console.log(infoUser.id)
+// Echo.private('private-chat.'+infoUser.id)
+//     .listen('NewMessageEvent', function (data) {
+//         console.log(data);
+//     })
+//     .subscribed(function () {
+//     console.log('Subscribed to private-chat.' + infoUser.id);
+// });
 
 let usersList = $('.display-user');
 Echo.join('users-online')

@@ -20,7 +20,7 @@ class MessageService
     public function loadMesage($idSend, $idRecipient)
     {
         $dataMessage = $this->messageRepository->getDetailMessage($idSend, $idRecipient);
-        $dataUser = $this->userRepository->all();
+        $dataUser = $this->userRepository->find($idRecipient);
         return [
             'user' => $dataUser,
             'message' => $dataMessage,
@@ -34,7 +34,7 @@ class MessageService
             'message' => $request->message,
             'recipient_id' => $request->recipient_id,
         ];
-        event(new NewMessageEvent($request->message,$data['recipient_id']));
+        event(new NewMessageEvent($request->message,$data['recipient_id'],session('avatar')));
         return $this->messageRepository->create($data);
     }
 

@@ -19,10 +19,12 @@ class NewMessageEvent implements ShouldBroadcast
      */
     public $message;
     public $userId;
-    public function __construct($message,$userId)
+    public $avatar;
+    public function __construct($message,$userId,$avatar)
     {
         $this->message = $message;
         $this->userId = $userId;
+        $this->avatar = $avatar;
     }
 
     /**

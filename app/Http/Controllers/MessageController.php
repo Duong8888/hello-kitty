@@ -15,10 +15,8 @@ class MessageController extends Controller
         $this->messageService = $messageService;
     }
 
-    public function getMessage(){
-        $idSend = auth()->id();
-        $idRecipient = '2';
-        $data = $this->messageService->loadMesage($idSend, $idRecipient);
+    public function getMessage(Request $request){
+        $data = $this->messageService->loadMesage(auth()->id(), $request->recipient_id);
         return response()->json($data);
     }
 

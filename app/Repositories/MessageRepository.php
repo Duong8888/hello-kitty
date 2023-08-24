@@ -15,8 +15,8 @@ class MessageRepository extends BaseRepository
     public function getDetailMessage($idSend, $idRecipient)
     {
         return Message::query()
-                ->where('user_id', $idSend)
-                ->where('recipient_id', $idRecipient)
-                ->get();
+            ->whereRaw('(user_id = ? AND recipient_id = ?) OR (user_id = ? AND recipient_id = ?)',
+                [$idSend, $idRecipient, $idRecipient, $idSend])
+            ->orderBy('created_at','ASC')->get();
     }
 }

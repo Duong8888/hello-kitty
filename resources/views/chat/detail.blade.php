@@ -2,6 +2,7 @@
 @section('content')
 
     <div class="action-message" data-action="{{route('chat.detail')}}"></div>
+    <div class="get-message" data-action="{{route('chat.getMessage')}}"></div>
     <div class="sidebar-group left-sidebar chat_sidebar">
 
         <div id="chats" class="left-sidebar-wrap sidebar active slimscroll">
@@ -254,27 +255,27 @@
 
 
     <div class="chat" id="middle">
-        <div class="slimscroll">
+        <div class="slimscroll main-slimscroll">
             <div class="chat-header">
                 <div class="user-details">
-                    <div class="d-lg-none ms-2">
-                        <ul class="list-inline mt-2 me-2">
-                            <li class="list-inline-item">
-                                <a class="text-muted px-0 left_side" href="#" data-chat="open">
-                                    <i class="fas fa-arrow-left"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <figure class="avatar ms-1">
-                        <img src="assets/img/avatar/avatar-8.jpg" class="rounded-circle" alt="image">
-                    </figure>
-                    <div class="mt-1">
-                        <h5>Doris Brown</h5>
-                        <small class="online">
-                            Online
-                        </small>
-                    </div>
+{{--                    <div class="d-lg-none ms-2">--}}
+{{--                        <ul class="list-inline mt-2 me-2">--}}
+{{--                            <li class="list-inline-item">--}}
+{{--                                <a class="text-muted px-0 left_side" href="#" data-chat="open">--}}
+{{--                                    <i class="fas fa-arrow-left"></i>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                    <figure class="avatar ms-1">--}}
+{{--                        <img src="assets/img/avatar/avatar-8.jpg" class="rounded-circle" alt="image">--}}
+{{--                    </figure>--}}
+{{--                    <div class="mt-1">--}}
+{{--                        <h5>Doris Brown</h5>--}}
+{{--                        <small class="online">--}}
+{{--                            Online--}}
+{{--                        </small>--}}
+{{--                    </div>--}}
                 </div>
                 <div class="chat-options">
                     <ul class="list-inline">
