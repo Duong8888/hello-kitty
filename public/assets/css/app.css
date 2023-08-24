@@ -46,7 +46,9 @@ Version      : 1.0
 	src: url(../fonts/MaterialIcons-Regular.eot);
 	src: local('Material Icons'), local('MaterialIcons-Regular'), url(../fonts/MaterialIcons-Regular.html) format('woff2'), url(../fonts/MaterialIcons-Regular.woff) format('woff'), url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
-
+.user-list-item.active {
+    background-color: #F4F4FA !important;
+}
 .material-icons {
 	font-family: 'Material Icons';
 	font-weight: normal;
@@ -6463,7 +6465,7 @@ p:last-child {
 .darkmode .chat-menus > ul > li > a > span,
 .darkmode .bottom-menus > ul > li > a > span {
 	background-color: #36404A;
-	box-shadow: none; 
+	box-shadow: none;
 }
 
 .darkmode .chat-menus ul li a span.material-icons,

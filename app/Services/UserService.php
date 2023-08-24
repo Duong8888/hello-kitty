@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Providers\RouteServiceProvider;
 use App\Repositories\UserRepository;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Http\Response;
@@ -29,27 +30,27 @@ class UserService
             $user = $this->userRepository->findColumn('google_id', $data->getId());
         } else {
             // tạo mới tài khoản nếu người dùng đăng nhập lần đầu
-            $data = [
+            $dataUser = [
                 'name' => $data->getName(),
                 'google_email' => $data->getEmail(),
                 'avatar' => $data->getAvatar(),
                 'google_id' => $data->getId(),
                 'google_token' => $data->token,
             ];
-            $user = $this->userRepository->create($data);
+            $user = $this->userRepository->create($dataUser);
         }
-        $token = $user->createToken('api-token')->plainTextToken;
-        $token = explode('|', $token);
-        return [
-            'user' => $user,
-            'token' => $token[1],
-        ];
+        Auth::login($user);
+        \session()->put('avatar', $data->getAvatar());
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        $user = Auth::user();
-        $user->currentAccessToken()->delete();
-        return \response()->json([], Response::HTTP_OK);
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }
