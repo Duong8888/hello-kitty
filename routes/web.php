@@ -18,13 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('chat.detail');
+    return view('welcome');
 })->name('home');
 
 Route::group(['prefix' => 'chat', 'as' => 'chat.'], function () {
-    Route::get('/', function () {
-        return view('chat.detail');
-    })->name('detail');
+    Route::get('/',[MessageController::class,'showDetail'])->name('detail');
     Route::post('message', [MessageController::class, 'getMessage'])->name('getMessage');
     Route::post('send', [MessageController::class, 'sendMessage']);
 });
