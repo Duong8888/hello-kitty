@@ -53,4 +53,8 @@ class UserService
 
         return redirect('/');
     }
+
+    public function getUsers(){
+        return $this->userRepository->ignore();
+    }
 }

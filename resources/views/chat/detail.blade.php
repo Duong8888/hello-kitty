@@ -40,6 +40,27 @@
 
                     <ul class="user-list mt-2 display-user">
 
+                        @foreach($data as $key => $value)
+                            <li class="user-list-item" data-id="{{$value->id}}">
+                                <div>
+                                    <div class="avatar avatar-away index-{{$value->id}}">
+                                        <img src="{{$value->avatar}}" class="rounded-circle" alt="image">
+                                    </div>
+                                </div>
+                                <div class="users-list-body">
+                                    <div>
+                                        <h5>{{$value->name}}</h5>
+                                        <p>It seems logical that the</p>
+                                    </div>
+                                    <div class="last-chat-time">
+                                        <small class="text-muted">05 min</small>
+                                        <div class="new-message-count">11</div>
+                                    </div>
+                                </div>
+                            </li>
+                        @endforeach
+
+
                         {{--                                <li class="user-list-item">--}}
                         {{--                                    <div>--}}
                         {{--                                        <div class="avatar avatar-away">--}}
@@ -191,24 +212,24 @@
         <div class="slimscroll main-slimscroll">
             <div class="chat-header">
                 <div class="user-details">
-{{--                    <div class="d-lg-none ms-2">--}}
-{{--                        <ul class="list-inline mt-2 me-2">--}}
-{{--                            <li class="list-inline-item">--}}
-{{--                                <a class="text-muted px-0 left_side" href="#" data-chat="open">--}}
-{{--                                    <i class="fas fa-arrow-left"></i>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                    <figure class="avatar ms-1">--}}
-{{--                        <img src="assets/img/avatar/avatar-8.jpg" class="rounded-circle" alt="image">--}}
-{{--                    </figure>--}}
-{{--                    <div class="mt-1">--}}
-{{--                        <h5>Doris Brown</h5>--}}
-{{--                        <small class="online">--}}
-{{--                            Online--}}
-{{--                        </small>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="d-lg-none ms-2">--}}
+                    {{--                        <ul class="list-inline mt-2 me-2">--}}
+                    {{--                            <li class="list-inline-item">--}}
+                    {{--                                <a class="text-muted px-0 left_side" href="#" data-chat="open">--}}
+                    {{--                                    <i class="fas fa-arrow-left"></i>--}}
+                    {{--                                </a>--}}
+                    {{--                            </li>--}}
+                    {{--                        </ul>--}}
+                    {{--                    </div>--}}
+                    {{--                    <figure class="avatar ms-1">--}}
+                    {{--                        <img src="assets/img/avatar/avatar-8.jpg" class="rounded-circle" alt="image">--}}
+                    {{--                    </figure>--}}
+                    {{--                    <div class="mt-1">--}}
+                    {{--                        <h5>Doris Brown</h5>--}}
+                    {{--                        <small class="online">--}}
+                    {{--                            Online--}}
+                    {{--                        </small>--}}
+                    {{--                    </div>--}}
                 </div>
                 <div class="chat-options">
                     <ul class="list-inline">
@@ -333,198 +354,198 @@
                             </div>
                         </div>
                     </div>
-{{--                    <div class="chats">--}}
-{{--                        <div class="chat-avatar">--}}
-{{--                            <img src="assets/img/avatar/avatar-8.jpg" class="rounded-circle dreams_chat" alt="image">--}}
-{{--                        </div>--}}
-{{--                        <div class="chat-content">--}}
-{{--                            <div class="message-content">--}}
-{{--                                & Next meeting tomorrow 10.00AM--}}
-{{--                                <div class="chat-time">--}}
-{{--                                    <div>--}}
-{{--                                        <div class="time"><i class="fas fa-clock"></i> 10:06</div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="chat-profile-name">--}}
-{{--                                <h6>Doris Brown</h6>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="chat-action-btns ms-3">--}}
-{{--                            <div class="chat-action-col">--}}
-{{--                                <a class="#" href="#" data-bs-toggle="dropdown">--}}
-{{--                                    <i class="fas fa-ellipsis-h"></i>--}}
-{{--                                </a>--}}
-{{--                                <div class="dropdown-menu dropdown-menu-end">--}}
-{{--                                    <a href="#" class="dropdown-item dream_profile_menu">Copy <span><i--}}
-{{--                                                class="far fa-copy"></i></span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Delete <span><i--}}
-{{--                                                class="far fa-trash-alt"></i></span></a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="chat-line">--}}
-{{--                        <span class="chat-date">Today</span>--}}
-{{--                    </div>--}}
-{{--                    <div class="chats chats-right">--}}
-{{--                        <div class="chat-content">--}}
-{{--                            <div class="message-content">--}}
-{{--                                Wow Thats Great--}}
-{{--                                <div class="chat-time">--}}
-{{--                                    <div>--}}
-{{--                                        <div class="time"><i class="fas fa-clock"></i> 10:02</div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="chat-profile-name text-end">--}}
-{{--                                <h6>Alexandr</h6>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="chat-avatar">--}}
-{{--                            <img src="assets/img/avatar/avatar-12.jpg" class="rounded-circle dreams_chat" alt="image">--}}
-{{--                        </div>--}}
-{{--                        <div class="chat-action-btns me-2">--}}
-{{--                            <div class="chat-action-col">--}}
-{{--                                <a class="#" href="#" data-bs-toggle="dropdown">--}}
-{{--                                    <i class="fas fa-ellipsis-h"></i>--}}
-{{--                                </a>--}}
-{{--                                <div class="dropdown-menu dropdown-menu-end">--}}
-{{--                                    <a href="#" class="dropdown-item dream_profile_menu">Copy <span><i--}}
-{{--                                                class="far fa-copy"></i></span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Delete <span><i--}}
-{{--                                                class="far fa-trash-alt"></i></span></a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="chat-read-col">--}}
-{{--                                <span class="material-icons">done_all</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="chats">--}}
-{{--                        <div class="chat-avatar">--}}
-{{--                            <img src="assets/img/avatar/avatar-8.jpg" class="rounded-circle dreams_chat" alt="image">--}}
-{{--                        </div>--}}
-{{--                        <div class="chat-content">--}}
-{{--                            <div class="message-content">--}}
-{{--                                <div class="download-col">--}}
-{{--                                    <ul>--}}
-{{--                                        <li>--}}
-{{--                                            <div class="image-download-col">--}}
-{{--                                                <a href="assets/img/chat-download.jpg" data-fancybox="gallery"--}}
-{{--                                                   class="fancybox">--}}
-{{--                                                    <img src="assets/img/chat-download.jpg" alt>--}}
-{{--                                                </a>--}}
-{{--                                                <div class="download-action d-flex align-items-center">--}}
-{{--                                                    <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>--}}
-{{--                                                    <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li>--}}
-{{--                                            <div class="image-download-col image-not-download">--}}
-{{--                                                <a href="assets/img/chat-download.jpg" data-fancybox="gallery"--}}
-{{--                                                   class="fancybox">--}}
-{{--                                                    <img src="assets/img/chat-download.jpg" alt>--}}
-{{--                                                </a>--}}
-{{--                                                <div class="download-action d-flex align-items-center">--}}
-{{--                                                    <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>--}}
-{{--                                                    <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                        <li>--}}
-{{--                                            <div class="image-download-col image-not-download">--}}
-{{--                                                <a href="assets/img/chat-download.jpg" data-fancybox="gallery"--}}
-{{--                                                   class="fancybox">--}}
-{{--                                                    <img src="assets/img/chat-download.jpg" alt>--}}
-{{--                                                </a>--}}
-{{--                                                <div class="download-action d-flex align-items-center">--}}
-{{--                                                    <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>--}}
-{{--                                                    <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </li>--}}
-{{--                                    </ul>--}}
-{{--                                </div>--}}
-{{--                                <div class="chat-time">--}}
-{{--                                    <div>--}}
-{{--                                        <div class="time"><i class="fas fa-clock"></i> 10:00</div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="chat-profile-name">--}}
-{{--                                <h6>Doris Brown</h6>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="chat-action-btns ms-3">--}}
-{{--                            <div class="chat-action-col">--}}
-{{--                                <a class="#" href="#" data-bs-toggle="dropdown">--}}
-{{--                                    <i class="fas fa-ellipsis-h"></i>--}}
-{{--                                </a>--}}
-{{--                                <div class="dropdown-menu dropdown-menu-end">--}}
-{{--                                    <a href="#" class="dropdown-item dream_profile_menu">Copy <span><i--}}
-{{--                                                class="far fa-copy"></i></span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Delete <span><i--}}
-{{--                                                class="far fa-trash-alt"></i></span></a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="chats chats-right">--}}
-{{--                        <div class="chat-content">--}}
-{{--                            <div class="message-content">--}}
-{{--                                <div class="file-download d-flex align-items-center">--}}
-{{--                                    <div class="file-type d-flex align-items-center justify-content-center me-2">--}}
-{{--                                        <i class="far fa-file-archive"></i>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="file-details">--}}
-{{--                                        <span class="file-name">filename.zip</span>--}}
-{{--                                        <span class="file-size">10.6MB</span>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="download-action d-flex align-items-center">--}}
-{{--                                        <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>--}}
-{{--                                        <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="chat-time">--}}
-{{--                                    <div>--}}
-{{--                                        <div class="time"><i class="fas fa-clock"></i> 10:02</div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="chat-profile-name text-end">--}}
-{{--                                <h6>Alexandr</h6>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="chat-avatar">--}}
-{{--                            <img src="assets/img/avatar/avatar-12.jpg" class="rounded-circle dreams_chat" alt="image">--}}
-{{--                        </div>--}}
-{{--                        <div class="chat-action-btns me-2">--}}
-{{--                            <div class="chat-action-col">--}}
-{{--                                <a class="#" href="#" data-bs-toggle="dropdown">--}}
-{{--                                    <i class="fas fa-ellipsis-h"></i>--}}
-{{--                                </a>--}}
-{{--                                <div class="dropdown-menu dropdown-menu-end">--}}
-{{--                                    <a href="#" class="dropdown-item dream_profile_menu">Copy <span><i--}}
-{{--                                                class="far fa-copy"></i></span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>--}}
-{{--                                    <a href="#" class="dropdown-item">Delete <span><i--}}
-{{--                                                class="far fa-trash-alt"></i></span></a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="chat-read-col">--}}
-{{--                                <span class="material-icons">done_all</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="chats">--}}
+                    {{--                        <div class="chat-avatar">--}}
+                    {{--                            <img src="assets/img/avatar/avatar-8.jpg" class="rounded-circle dreams_chat" alt="image">--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="chat-content">--}}
+                    {{--                            <div class="message-content">--}}
+                    {{--                                & Next meeting tomorrow 10.00AM--}}
+                    {{--                                <div class="chat-time">--}}
+                    {{--                                    <div>--}}
+                    {{--                                        <div class="time"><i class="fas fa-clock"></i> 10:06</div>--}}
+                    {{--                                    </div>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="chat-profile-name">--}}
+                    {{--                                <h6>Doris Brown</h6>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="chat-action-btns ms-3">--}}
+                    {{--                            <div class="chat-action-col">--}}
+                    {{--                                <a class="#" href="#" data-bs-toggle="dropdown">--}}
+                    {{--                                    <i class="fas fa-ellipsis-h"></i>--}}
+                    {{--                                </a>--}}
+                    {{--                                <div class="dropdown-menu dropdown-menu-end">--}}
+                    {{--                                    <a href="#" class="dropdown-item dream_profile_menu">Copy <span><i--}}
+                    {{--                                                class="far fa-copy"></i></span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Delete <span><i--}}
+                    {{--                                                class="far fa-trash-alt"></i></span></a>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <div class="chat-line">--}}
+                    {{--                        <span class="chat-date">Today</span>--}}
+                    {{--                    </div>--}}
+                    {{--                    <div class="chats chats-right">--}}
+                    {{--                        <div class="chat-content">--}}
+                    {{--                            <div class="message-content">--}}
+                    {{--                                Wow Thats Great--}}
+                    {{--                                <div class="chat-time">--}}
+                    {{--                                    <div>--}}
+                    {{--                                        <div class="time"><i class="fas fa-clock"></i> 10:02</div>--}}
+                    {{--                                    </div>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="chat-profile-name text-end">--}}
+                    {{--                                <h6>Alexandr</h6>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="chat-avatar">--}}
+                    {{--                            <img src="assets/img/avatar/avatar-12.jpg" class="rounded-circle dreams_chat" alt="image">--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="chat-action-btns me-2">--}}
+                    {{--                            <div class="chat-action-col">--}}
+                    {{--                                <a class="#" href="#" data-bs-toggle="dropdown">--}}
+                    {{--                                    <i class="fas fa-ellipsis-h"></i>--}}
+                    {{--                                </a>--}}
+                    {{--                                <div class="dropdown-menu dropdown-menu-end">--}}
+                    {{--                                    <a href="#" class="dropdown-item dream_profile_menu">Copy <span><i--}}
+                    {{--                                                class="far fa-copy"></i></span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Delete <span><i--}}
+                    {{--                                                class="far fa-trash-alt"></i></span></a>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="chat-read-col">--}}
+                    {{--                                <span class="material-icons">done_all</span>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <div class="chats">--}}
+                    {{--                        <div class="chat-avatar">--}}
+                    {{--                            <img src="assets/img/avatar/avatar-8.jpg" class="rounded-circle dreams_chat" alt="image">--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="chat-content">--}}
+                    {{--                            <div class="message-content">--}}
+                    {{--                                <div class="download-col">--}}
+                    {{--                                    <ul>--}}
+                    {{--                                        <li>--}}
+                    {{--                                            <div class="image-download-col">--}}
+                    {{--                                                <a href="assets/img/chat-download.jpg" data-fancybox="gallery"--}}
+                    {{--                                                   class="fancybox">--}}
+                    {{--                                                    <img src="assets/img/chat-download.jpg" alt>--}}
+                    {{--                                                </a>--}}
+                    {{--                                                <div class="download-action d-flex align-items-center">--}}
+                    {{--                                                    <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>--}}
+                    {{--                                                    <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>--}}
+                    {{--                                                </div>--}}
+                    {{--                                            </div>--}}
+                    {{--                                        </li>--}}
+                    {{--                                        <li>--}}
+                    {{--                                            <div class="image-download-col image-not-download">--}}
+                    {{--                                                <a href="assets/img/chat-download.jpg" data-fancybox="gallery"--}}
+                    {{--                                                   class="fancybox">--}}
+                    {{--                                                    <img src="assets/img/chat-download.jpg" alt>--}}
+                    {{--                                                </a>--}}
+                    {{--                                                <div class="download-action d-flex align-items-center">--}}
+                    {{--                                                    <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>--}}
+                    {{--                                                    <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>--}}
+                    {{--                                                </div>--}}
+                    {{--                                            </div>--}}
+                    {{--                                        </li>--}}
+                    {{--                                        <li>--}}
+                    {{--                                            <div class="image-download-col image-not-download">--}}
+                    {{--                                                <a href="assets/img/chat-download.jpg" data-fancybox="gallery"--}}
+                    {{--                                                   class="fancybox">--}}
+                    {{--                                                    <img src="assets/img/chat-download.jpg" alt>--}}
+                    {{--                                                </a>--}}
+                    {{--                                                <div class="download-action d-flex align-items-center">--}}
+                    {{--                                                    <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>--}}
+                    {{--                                                    <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>--}}
+                    {{--                                                </div>--}}
+                    {{--                                            </div>--}}
+                    {{--                                        </li>--}}
+                    {{--                                    </ul>--}}
+                    {{--                                </div>--}}
+                    {{--                                <div class="chat-time">--}}
+                    {{--                                    <div>--}}
+                    {{--                                        <div class="time"><i class="fas fa-clock"></i> 10:00</div>--}}
+                    {{--                                    </div>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="chat-profile-name">--}}
+                    {{--                                <h6>Doris Brown</h6>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="chat-action-btns ms-3">--}}
+                    {{--                            <div class="chat-action-col">--}}
+                    {{--                                <a class="#" href="#" data-bs-toggle="dropdown">--}}
+                    {{--                                    <i class="fas fa-ellipsis-h"></i>--}}
+                    {{--                                </a>--}}
+                    {{--                                <div class="dropdown-menu dropdown-menu-end">--}}
+                    {{--                                    <a href="#" class="dropdown-item dream_profile_menu">Copy <span><i--}}
+                    {{--                                                class="far fa-copy"></i></span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Delete <span><i--}}
+                    {{--                                                class="far fa-trash-alt"></i></span></a>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <div class="chats chats-right">--}}
+                    {{--                        <div class="chat-content">--}}
+                    {{--                            <div class="message-content">--}}
+                    {{--                                <div class="file-download d-flex align-items-center">--}}
+                    {{--                                    <div class="file-type d-flex align-items-center justify-content-center me-2">--}}
+                    {{--                                        <i class="far fa-file-archive"></i>--}}
+                    {{--                                    </div>--}}
+                    {{--                                    <div class="file-details">--}}
+                    {{--                                        <span class="file-name">filename.zip</span>--}}
+                    {{--                                        <span class="file-size">10.6MB</span>--}}
+                    {{--                                    </div>--}}
+                    {{--                                    <div class="download-action d-flex align-items-center">--}}
+                    {{--                                        <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>--}}
+                    {{--                                        <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>--}}
+                    {{--                                    </div>--}}
+                    {{--                                </div>--}}
+                    {{--                                <div class="chat-time">--}}
+                    {{--                                    <div>--}}
+                    {{--                                        <div class="time"><i class="fas fa-clock"></i> 10:02</div>--}}
+                    {{--                                    </div>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="chat-profile-name text-end">--}}
+                    {{--                                <h6>Alexandr</h6>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="chat-avatar">--}}
+                    {{--                            <img src="assets/img/avatar/avatar-12.jpg" class="rounded-circle dreams_chat" alt="image">--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="chat-action-btns me-2">--}}
+                    {{--                            <div class="chat-action-col">--}}
+                    {{--                                <a class="#" href="#" data-bs-toggle="dropdown">--}}
+                    {{--                                    <i class="fas fa-ellipsis-h"></i>--}}
+                    {{--                                </a>--}}
+                    {{--                                <div class="dropdown-menu dropdown-menu-end">--}}
+                    {{--                                    <a href="#" class="dropdown-item dream_profile_menu">Copy <span><i--}}
+                    {{--                                                class="far fa-copy"></i></span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>--}}
+                    {{--                                    <a href="#" class="dropdown-item">Delete <span><i--}}
+                    {{--                                                class="far fa-trash-alt"></i></span></a>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="chat-read-col">--}}
+                    {{--                                <span class="material-icons">done_all</span>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
                 </div>
             </div>
         </div>

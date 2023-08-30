@@ -19,6 +19,6 @@ class SocialiteController extends Controller
     }
     public function handleCallback(){
         $this->userSevice->login();
-        return redirect()->route('home');
+        return redirect()->route('chat.detail');
     }
 }
