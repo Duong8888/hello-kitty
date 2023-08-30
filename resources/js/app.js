@@ -27,6 +27,8 @@ Echo.join('users-online')
             activeStatus.addClass('avatar-online');
         });
         // users chứa danh sách người dùng hiện diện
+        // users chứa danh sách người dùng hiện diện
+        // users chứa danh sách người dùng hiện diện
         console.log(users);
         // Cập nhật danh sách người dùng đang đăng nhập trên giao diện
     })
